@@ -1,6 +1,5 @@
-# pyproject.toml
 [build-system]
-requires = ["setuptools", "setuptools-rust"]
+requires = ["setuptools>=42", "wheel", "setuptools-rust"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,8 +7,9 @@ name = "richard-fib-rs"
 version = "0.1"
 description = "A description for your project"
 authors = [
-    { name = "Richard Chukwu", email = "richinex@example.com" }
+    { name = "Your Name", email = "your.email@example.com" }
 ]
+
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Development Status :: 3 - Alpha",
@@ -19,13 +19,19 @@ classifiers = [
     "Operating System :: POSIX",
     "Operating System :: MacOS :: MacOS X",
 ]
+readme = "README.md"
+keywords = ["rust", "python", "extension"]
+include = ["Cargo.toml", "src/**/*"]
+
+[project.optional-dependencies]
+test = ["pytest"]
 
 [tool.setuptools]
 packages = ["richard_fib_rs"]
 
-[[tool.setuptools-rust.ext-modules]]
-# Private Rust extension module to be nested into the Python package
-target = "richard_fib_rs.richard_fib_rs"  # The last part of the name (e.g. "_lib") has to match lib.name in Cargo.toml,
-                             # but you can add a prefix to nest it inside of a Python package.
-path = "Cargo.toml"      # Default value, can be omitted
-binding = "PyO3"
+[tool.setuptools-rust]
+bindings = "pyo3"
+
+[[tool.setuptools-rust.extension]]
+name = "richard_fib_rs.richard_fib_rs"
+path = "Cargo.toml"
