@@ -1,3 +1,8 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools", "setuptools-rust"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "richard-fib-rs"
 version = "0.1"
@@ -15,10 +20,8 @@ classifiers = [
     "Operating System :: MacOS :: MacOS X",
 ]
 
-[tool.setuptools.packages]
-# Pure Python packages/modules
-find = { where = ["python"] }
-
+[tool.setuptools]
+packages = ["richard_fib_rs"]
 
 [[tool.setuptools-rust.ext-modules]]
 # Private Rust extension module to be nested into the Python package
