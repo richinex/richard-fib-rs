@@ -7,7 +7,6 @@ version = "0.1"
 description = "A Python package with Rust extensions."
 authors = [{name = "Richard", email = "richinex@example.com"}]
 requires-python = ">=3.9"
-license = "MIT"
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Development Status :: 3 - Alpha",
