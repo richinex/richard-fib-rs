@@ -1,2 +1,33 @@
-[build-system]
-requires = ["setuptools>=41.0.0", "wheel", "setuptools_rust>=1.0.0"]
+[project]
+name = "richard-fib-rs"
+version = "0.1"
+description = "A description for your project"
+authors = [
+    { name = "Richard Chukwu", email = "richinex@example.com" }
+]
+license = "MIT"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Rust",
+    "Operating System :: POSIX",
+    "Operating System :: MacOS :: MacOS X",
+]
+readme = "README.md"
+keywords = ["rust", "python", "extension"]
+include = ["Cargo.toml", "src/**/*"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools]
+packages = ["richard_fib_rs"]
+
+[tool.setuptools-rust]
+bindings = "pyo3"
+
+[[tool.setuptools-rust.extension]]
+name = "richard_fib_rs.richard_fib_rs"
+path = "Cargo.toml"
