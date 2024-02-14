@@ -19,9 +19,7 @@ classifiers = [
     "Operating System :: POSIX",
     "Operating System :: MacOS :: MacOS X",
 ]
-readme = "README.md"
-keywords = ["rust", "python", "extension"]
-include = ["Cargo.toml", "src/**/*"]
+
 
 [project.optional-dependencies]
 test = ["pytest"]
