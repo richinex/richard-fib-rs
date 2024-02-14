@@ -11,3 +11,4 @@ pyo3 = { version = "0.20.2", features = ["extension-module"] }
 name = "richard_fib_rs"
 crate-type = ["cdylib"]
 
+path = "src/lib.rs"
