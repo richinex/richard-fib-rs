@@ -1,8 +1,5 @@
-from setuptools import dist
-dist.Distribution().fetch_build_eggs(['setuptools_rust'])
 from setuptools import setup
 from setuptools_rust import Binding, RustExtension
-
 
 setup(
     name="richard-fib-rs",
@@ -22,4 +19,11 @@ setup(
         ],
     # rust extensions are not zip safe, just like C-extensions.
     zip_safe=False,
+    entry_points={
+    'console_scripts': [
+        'fib-number = richard_fib_rs.'
+        'fib_number_command:'
+        'fib_number_command',
+    ],
+    },
 )
