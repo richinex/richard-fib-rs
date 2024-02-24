@@ -1,5 +1,5 @@
 from typing import Union, List, Optional
-from richard_fib_rs import fibonacci_number, fibonacci_numbers
+from .richard_fib_rs import fibonacci_number, fibonacci_numbers
 from .counter import Counter
 
 class RichardFibNumberAdapter:
