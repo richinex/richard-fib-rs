@@ -2,7 +2,7 @@ from typing import Union, List, Optional
 from richard_fib_rs import fibonacci_number, fibonacci_numbers
 from .counter import Counter
 
-class FlittonFibNumberAdapter:
+class RichardFibNumberAdapter:
     def __init__(self,
         number_input: Union[int, List[int]]) -> None:
         self.input: Union[int, List[int]] = number_input
